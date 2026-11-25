@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!--
+    Redmi 12 5G (sky / SM4450 / parrot-ravelin) tree set.
+
+    Sync into a LineageOS 24.0 workspace:
+
+      repo init -u https://github.com/LineageOS/android.git -b lineage-24.0
+      mkdir -p .repo/local_manifests
+      curl -L -o .repo/local_manifests/sky.xml \
+        https://raw.githubusercontent.com/sm4450-river-tibet-project/local_manifests/main/sky.xml
+      repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
+
+    Then:
+
+      source build/envsetup.sh
+      breakfast sky
+      brunch sky
+  -->
+
+  <remote name="sky-org"
+          fetch="https://github.com/sm4450-river-tibet-project"
+          revision="6.12" />
+
+  <!-- Device trees -->
+  <project name="device_xiaomi_sky"
+           path="device/xiaomi/sky"
+           remote="sky-org"
+           revision="lineage-24.0" />
+
+  <project name="device_xiaomi_sm4450-common"
+           path="device/xiaomi/sm4450-common"
+           remote="sky-org"
+           revision="lineage-24.0" />
+
+  <!-- Kernel: GKI 6.12 base with the CLO platform overlay applied -->
+  <project name="kernel_xiaomi_sky-6.12"
+           path="kernel/xiaomi/sky"
+           remote="sky-org"
+           revision="6.12" />
+
+  <!-- Device trees for that kernel -->
+  <project name="kernel_xiaomi_sky-devicetrees-6.12"
+           path="kernel/xiaomi/sky-devicetrees"
+           remote="sky-org"
+           revision="6.12" />
+
+  <!-- Out-of-tree vendor modules: xiaomi/ plus the techpack trees -->
+  <project name="kernel_xiaomi_sky-modules"
+           path="kernel/xiaomi/sky-modules"
+           remote="sky-org"
+           revision="6.12" />
+
+</manifest>
