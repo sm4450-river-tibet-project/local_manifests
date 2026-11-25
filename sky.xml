@@ -9,7 +9,11 @@
       mkdir -p .repo/local_manifests
       curl -L -o .repo/local_manifests/sky.xml \
         https://raw.githubusercontent.com/sm4450-river-tibet-project/local_manifests/main/sky.xml
-      repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
+      repo sync -c -j8 -q
+
+    (An XML comment cannot contain two hyphens in a row, so the sync flags that
+    start with them are left out of this block. Use the plain sync above, or add
+    force-sync / no-clone-bundle / no-tags yourself on the command line.)
 
     Then:
 
