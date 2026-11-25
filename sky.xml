@@ -55,6 +55,11 @@
            remote="sky-org"
            revision="6.12" />
 
+  <!-- Hardware support libraries (libinit helpers, touch, displayfeature) -->
+  <project name="LineageOS/android_hardware_xiaomi"
+           path="hardware/xiaomi"
+           revision="lineage-24.0" />
+
   <!-- Proprietary vendor blobs, extracted from the river_jp image -->
   <project name="vendor_xiaomi_sm4450-common"
            path="vendor/xiaomi/sm4450-common"
